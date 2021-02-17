@@ -28,7 +28,7 @@ jobs:
       # Make executables using cmake
       - name: Make executables using CMake
         run: |
-          . cmake
+          cmake .
           make
       - name: Run test executable
         run: |
