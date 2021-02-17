@@ -69,6 +69,7 @@ TEST(AreaTests, NegativeNegative){
 	EXPECT_EQ(r2.area(), 90);
 }
 
+
 TEST(AreaTests, Zero){
 	Rectangle r1(0, 0);
 	EXPECT_EQ(r1.area(), 0);
@@ -77,6 +78,14 @@ TEST(AreaTests, Zero){
 	r2.set_height(0);
 	EXPECT_EQ(r2.area(), 0);
 }
+
+TEST(AreaTests, ZeroPt2){
+	Rectangle r1; 
+	r1.set_width(5);
+	r1.set_height(0);
+	EXPECT_EQ(r1.area(), 0);
+}	
+
 
 TEST(PerimeterTests, PositivePositive){
 	Rectangle r1(4, 5);
@@ -113,6 +122,14 @@ TEST(PerimeterTests, Zero){
 	r2.set_height(0);
 	EXPECT_EQ(r2.perimeter(), 0);
 }
+
+TEST(PerimeterTests, ZeroPt2){
+	Rectangle r1;
+	r1.set_width(0);
+	r1.set_height(10);
+	EXPECT_EQ(r1.perimeter(),0); 
+}
+ 
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
