@@ -24,12 +24,15 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-
+      # Checkout submodules to access gtest
+      - name: Checkout submodules
+        run: git submodule update --init --recursive
       # Make executables using cmake
       - name: Make executables using CMake
         run: |
           cmake .
           make
+      # Run text executable
       - name: Run test executable
         run: |
           ./test
